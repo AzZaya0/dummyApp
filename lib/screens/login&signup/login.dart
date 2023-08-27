@@ -9,9 +9,15 @@ class LoginPage extends StatelessWidget {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.asset(
-            'lib/assets/images/google.png',
-            scale: 1,
+          Center(
+            child: GestureDetector(
+              onTap: () {},
+              child: Image.asset(
+                'lib/assets/icons/google.png',
+                height: 100,
+                width: 100,
+              ),
+            ),
           )
         ],
       ),
