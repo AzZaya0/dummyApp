@@ -23,7 +23,7 @@ class LoginPage extends StatelessWidget {
           Center(
             child: GestureDetector(
               onTap: () {
-                logprov.googleSignIn();
+                logprov.SigninwithGoogle();
               },
               child: Image.asset(
                 'lib/assets/icons/google.png',

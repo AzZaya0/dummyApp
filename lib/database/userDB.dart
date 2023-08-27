@@ -5,6 +5,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 class UserDB {
   static FirebaseAuth auth = FirebaseAuth.instance;
   static User user = auth.currentUser!;
+  // ignore: non_constant_identifier_names
   static String UsersUsername = user.email!.split('@')[0];
   static FirebaseFirestore firestore = FirebaseFirestore.instance;
 
