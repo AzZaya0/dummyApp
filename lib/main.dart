@@ -1,9 +1,17 @@
 // ignore_for_file: prefer_const_constructors
 
-import 'package:dummyapp/screens/login&signup/login.dart';
-import 'package:flutter/material.dart';
+import 'package:dummyapp/firebase_options.dart';
+import 'package:dummyapp/provider/loginPageProvider.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main(List<String> args) {
+import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+
+Future<void> main(List<String> args) async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp(
+    options: DefaultFirebaseOptions.currentPlatform,
+  );
   runApp(MyApp());
 }
 
@@ -12,9 +20,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: LoginPage(),
-    );
+    return MultiProvider(providers: [
+      ChangeNotifierProvider(create: (_) {
+        LoginPageProvider();
+      })
+    ]);
   }
 }
