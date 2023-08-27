@@ -1,7 +1,10 @@
 // ignore_for_file: prefer_const_constructors
 
+import 'package:dummyapp/auth/authpage.dart';
 import 'package:dummyapp/firebase_options.dart';
+import 'package:dummyapp/provider/homePageProvider.dart';
 import 'package:dummyapp/provider/loginPageProvider.dart';
+
 import 'package:firebase_core/firebase_core.dart';
 
 import 'package:flutter/material.dart';
@@ -12,18 +15,14 @@ Future<void> main(List<String> args) async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-  runApp(MyApp());
-}
-
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return MultiProvider(providers: [
-      ChangeNotifierProvider(create: (_) {
-        LoginPageProvider();
-      })
-    ]);
-  }
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider(create: (_) => LoginPageProvider()),
+      ChangeNotifierProvider(create: (_) => homePageProvider())
+    ],
+    child: MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: AuthPage(),
+    ),
+  ));
 }

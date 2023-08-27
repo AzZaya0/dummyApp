@@ -7,15 +7,23 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final prov = Provider.of<LoginPageProvider>(context);
+    final logprov = Provider.of<LoginPageProvider>(context);
     return Scaffold(
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
+          const Center(
+              child: Padding(
+            padding: EdgeInsets.all(40.0),
+            child: Text(
+              'login',
+              style: TextStyle(fontSize: 40),
+            ),
+          )),
           Center(
             child: GestureDetector(
               onTap: () {
-                prov.googleSignIn();
+                logprov.googleSignIn();
               },
               child: Image.asset(
                 'lib/assets/icons/google.png',
