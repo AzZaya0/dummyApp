@@ -22,7 +22,6 @@ class LoginPageProvider with ChangeNotifier {
           .signInWithCredential(credential)
           .then((value) async {
         if (await UserDB.checkuserLogin()) {
-          UserDB.createuser();
         } else {
           UserDB.createuser();
         }
