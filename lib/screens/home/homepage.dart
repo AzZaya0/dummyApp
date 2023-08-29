@@ -9,6 +9,10 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final provs = Provider.of<homePageProvider>(context);
     return Scaffold(
+      appBar: AppBar(
+        title: Text("dummy app"),
+        centerTitle: true,
+      ),
       body: GestureDetector(
         onTap: () {
           provs.signout();
@@ -18,6 +22,8 @@ class HomePage extends StatelessWidget {
           children: [
             Center(
               child: Container(
+                decoration:
+                    BoxDecoration(borderRadius: BorderRadius.circular(14)),
                 height: 100,
                 width: 100,
                 alignment: Alignment.center,
