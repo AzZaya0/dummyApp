@@ -32,10 +32,28 @@ class HomePage extends StatelessWidget {
         StreamBuilder(
             stream: getallusers(),
             builder: (context, snapshot) {
-              if (snapshot.hasData) {}
+              if (snapshot.hasData) {
+                final data = snapshot.data!.docs;
+                datalist = data
+                    .map((e) =>
+                        UserModel.fromJson(e.data() as Map<String, dynamic>))
+                    .toList();
+                return _lisBuilder(datalist.length, datalist);
+              }
               return Container();
             })
       ],
     ));
+  }
+
+  Widget _lisBuilder(itemCount, List<UserModel> datalist) {
+    return Expanded(
+        child: ListView.builder(
+            itemCount: itemCount,
+            itemBuilder: (ctx, index) {
+              return Container(
+                child: Text((datalist[index]).username),
+              );
+            }));
   }
 }
