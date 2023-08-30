@@ -1,8 +1,11 @@
+import 'package:dummyapp/database/getUsers.dart';
 import 'package:dummyapp/provider/homePageProvider.dart';
 import 'package:dummyapp/utils/constants.dart';
 import 'package:dummyapp/widgets/myIconBtn.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+
+import '../../model/userModel.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -10,6 +13,7 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final provs = Provider.of<homePageProvider>(context);
+    List<UserModel> datalist = [];
     return Scaffold(
         body: Column(
       children: [
@@ -25,9 +29,12 @@ class HomePage extends StatelessWidget {
             )
           ],
         ),
-        Container(
-          child: Text("Welcome back user"),
-        ),
+        StreamBuilder(
+            stream: getallusers(),
+            builder: (context, snapshot) {
+              if (snapshot.hasData) {}
+              return Container();
+            })
       ],
     ));
   }
