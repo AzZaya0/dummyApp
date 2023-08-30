@@ -1,4 +1,6 @@
 import 'package:dummyapp/provider/homePageProvider.dart';
+import 'package:dummyapp/utils/constants.dart';
+import 'package:dummyapp/widgets/myIconBtn.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -9,23 +11,24 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     final provs = Provider.of<homePageProvider>(context);
     return Scaffold(
-        appBar: AppBar(
+        body: Column(
+      children: [
+        AppBar(
           title: Text("dummy app"),
-          centerTitle: true,
+          backgroundColor: kprimaryColor,
           actions: [
-            IconButton(
-                onPressed: () {
-                  provs.signout();
-                },
-                icon: const Icon(
-                  Icons.logout,
-                  color: Colors.white,
-                  size: 40,
-                ))
+            MyIconBtn(
+                ontap: provs.signout, icons: Icons.favorite_border_rounded),
+            Padding(
+              padding: EdgeInsets.only(left: 12),
+              child: MyIconBtn(ontap: provs.signout, icons: Icons.message),
+            )
           ],
         ),
-        body: Container(
+        Container(
           child: Text("Welcome back user"),
-        ));
+        ),
+      ],
+    ));
   }
 }
