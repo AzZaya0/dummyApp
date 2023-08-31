@@ -33,10 +33,7 @@ class HomePage extends StatelessWidget {
                 )
               ],
             ),
-            Divider(
-              color: kprimaryColor,
-              thickness: 1,
-            ),
+
             //stream buider added----------------------------------------------------//
             StreamBuilder(
                 stream: getallusers(),
@@ -54,7 +51,11 @@ class HomePage extends StatelessWidget {
                     height: 100,
                     width: 100,
                   );
-                })
+                }),
+            Divider(
+              color: ksubColor,
+              thickness: 0.2,
+            ),
           ],
         ));
   }
@@ -71,7 +72,10 @@ class HomePage extends StatelessWidget {
           itemBuilder: (ctx, index) {
             return Padding(
               padding: EdgeInsets.only(
-                  right: screenwidth * 0.02, left: screenwidth * 0.02),
+                  right: screenwidth * 0.02,
+                  left: screenwidth * 0.02,
+                  top: screenhight * 0.015,
+                  bottom: 0),
               child: Column(
                 children: [
                   ClipRRect(
