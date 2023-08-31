@@ -50,14 +50,17 @@ class PostFeedPage extends StatelessWidget {
                       bottom: screenhight * 0.02, left: screenwidth * 0.05),
                   child: Row(
                     children: [
-                      ClipRRect(
-                          borderRadius: BorderRadius.circular(200),
-                          child: Image.network(
-                            (userdata[index]).photoUrl,
-                            height: screenhight * 0.05,
-                            width: screenwidth * 0.1,
-                            fit: BoxFit.fill,
-                          )),
+                      Container(
+                        height: screenhight * 0.05,
+                        decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(200)),
+                        child: ClipRRect(
+                            borderRadius: BorderRadius.circular(200),
+                            child: Image.network(
+                              (userdata[index]).photoUrl,
+                              fit: BoxFit.fill,
+                            )),
+                      ),
                       SizedBox(
                         width: screenwidth * 0.02,
                       ),

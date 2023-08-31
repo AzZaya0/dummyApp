@@ -52,14 +52,17 @@ class StortPage extends StatelessWidget {
                   bottom: 0),
               child: Column(
                 children: [
-                  ClipRRect(
-                      borderRadius: BorderRadius.circular(200),
-                      child: Image.network(
-                        (datalist[index]).photoUrl,
-                        height: screenhight * 0.1,
-                        width: screenwidth * 0.2,
-                        fit: BoxFit.fill,
-                      )),
+                  Container(
+                    height: screenhight * 0.1,
+                    decoration:
+                        BoxDecoration(borderRadius: BorderRadius.circular(200)),
+                    child: ClipRRect(
+                        borderRadius: BorderRadius.circular(200),
+                        child: Image.network(
+                          (datalist[index]).photoUrl,
+                          fit: BoxFit.fill,
+                        )),
+                  ),
                   Text(
                     (datalist[index]).username,
                     style: TextStyle(
