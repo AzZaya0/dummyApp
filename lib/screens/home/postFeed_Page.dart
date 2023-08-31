@@ -26,22 +26,51 @@ class PostFeedPage extends StatelessWidget {
                 .map(
                     (e) => UserModel.fromJson(e.data() as Map<String, dynamic>))
                 .toList();
-            return _listOfPost(userdata, screenwidth, screenhight, Index);
+            return _listOfPost(
+                userdata.length, userdata, screenwidth, screenhight, Index);
           }
           return Container();
         });
   }
 
-  Widget _listOfPost(userdata, screenwidth, screenhight, index) {
+  Widget _listOfPost(itemCount, userdata, screenwidth, screenhight, index) {
     return Expanded(
       child: ListView.builder(
         itemCount: 100,
         itemBuilder: (BuildContext context, int index) {
           return Container(
-            child: Text(
-              'hellp',
-              style: TextStyle(color: Colors.white),
-            ),
+            height: screenhight * 0.15,
+            width: screenwidth,
+            child: ListView.builder(
+                scrollDirection: Axis.horizontal,
+                itemCount: itemCount,
+                itemBuilder: (ctx, index) {
+                  return Padding(
+                    padding: EdgeInsets.only(
+                        right: screenwidth * 0.02,
+                        left: screenwidth * 0.02,
+                        top: screenhight * 0.015,
+                        bottom: 0),
+                    child: Column(
+                      children: [
+                        ClipRRect(
+                            borderRadius: BorderRadius.circular(200),
+                            child: Image.network(
+                              (userdata[index]).photoUrl,
+                              height: screenhight * 0.1,
+                              width: screenwidth * 0.2,
+                              fit: BoxFit.fill,
+                            )),
+                        Text(
+                          (userdata[index]).username,
+                          style: TextStyle(
+                            color: Colors.white,
+                          ),
+                        )
+                      ],
+                    ),
+                  );
+                }),
           );
         },
       ),
