@@ -35,18 +35,49 @@ class PostFeedPage extends StatelessWidget {
         });
   }
 
-  Widget _listOfPost(itemCount, userdata, screenwidth, screenhight, index) {
+  Widget _listOfPost(
+      itemCount, List<UserModel> userdata, screenwidth, screenhight, index) {
     return Expanded(
       child: ListView.builder(
-        itemCount: 100,
+        itemCount: itemCount,
         itemBuilder: (BuildContext context, int index) {
-          return Column(
-            children: [
-              Divider(
-                color: ksubColor,
-                thickness: 0.2,
-              ),
-            ],
+          return Padding(
+            padding: EdgeInsets.only(bottom: screenhight * 0.03),
+            child: Column(
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(
+                      bottom: screenhight * 0.02, left: screenwidth * 0.05),
+                  child: Row(
+                    children: [
+                      ClipRRect(
+                          borderRadius: BorderRadius.circular(200),
+                          child: Image.network(
+                            (userdata[index]).photoUrl,
+                            height: screenhight * 0.05,
+                            width: screenwidth * 0.1,
+                            fit: BoxFit.fill,
+                          )),
+                      SizedBox(
+                        width: screenwidth * 0.02,
+                      ),
+                      Text(
+                        (userdata[index]).username,
+                        style: TextStyle(color: Colors.white, fontSize: 18),
+                      )
+                    ],
+                  ),
+                ),
+                Container(
+                  height: screenhight * 0.4,
+                  width: screenwidth,
+                  child: Image.network(
+                    (userdata[index]).photoUrl,
+                    fit: BoxFit.fill,
+                  ),
+                )
+              ],
+            ),
           );
         },
       ),
