@@ -1,5 +1,6 @@
 import 'package:dummyapp/database/getUsers.dart';
 import 'package:dummyapp/provider/homePageProvider.dart';
+import 'package:dummyapp/screens/home/postFeed_Page.dart';
 import 'package:dummyapp/utils/constants.dart';
 import 'package:dummyapp/widgets/myIconBtn.dart';
 import 'package:flutter/material.dart';
@@ -22,7 +23,7 @@ class HomePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             AppBar(
-              title: Text("dummy app"),
+              title: Text("Dummy gram"),
               backgroundColor: kprimaryColor,
               actions: [
                 MyIconBtn(
@@ -56,6 +57,10 @@ class HomePage extends StatelessWidget {
               color: ksubColor,
               thickness: 0.2,
             ),
+            PostFeedPage(
+              screenhight: screenhight,
+              screenwidth: screenwidth,
+            ) //---------------------------------------------------{ Post Feed Page}
           ],
         ));
   }
