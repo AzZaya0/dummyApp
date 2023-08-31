@@ -8,14 +8,17 @@ import 'package:provider/provider.dart';
 import '../../model/userModel.dart';
 
 class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+  HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final screenhight = MediaQuery.of(context).size.height;
+    final screenwidth = MediaQuery.of(context).size.width;
     final provs = Provider.of<homePageProvider>(context);
     List<UserModel> datalist = [];
     return Scaffold(
         body: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         AppBar(
           title: Text("dummy app"),
@@ -38,22 +41,40 @@ class HomePage extends StatelessWidget {
                     .map((e) =>
                         UserModel.fromJson(e.data() as Map<String, dynamic>))
                     .toList();
-                return _lisBuilder(datalist.length, datalist);
+                return _lisBuilder(
+                    datalist.length, datalist, screenwidth, screenhight);
               }
-              return Container();
+              return Container(
+                height: 100,
+                width: 100,
+              );
             })
       ],
     ));
   }
 
-  Widget _lisBuilder(itemCount, List<UserModel> datalist) {
-    return Expanded(
-        child: ListView.builder(
-            itemCount: itemCount,
-            itemBuilder: (ctx, index) {
-              return Container(
-                child: Text((datalist[index]).username),
-              );
-            }));
+  Widget _lisBuilder(
+      itemCount, List<UserModel> datalist, screenwidth, screenhight) {
+    return Container(
+      height: screenhight * 0.1,
+      width: screenwidth,
+      child: ListView.builder(
+          scrollDirection: Axis.horizontal,
+          itemCount: itemCount,
+          itemBuilder: (ctx, index) {
+            return Padding(
+              padding: EdgeInsets.only(
+                  right: screenwidth * 0.02, left: screenwidth * 0.02),
+              child: ClipRRect(
+                  borderRadius: BorderRadius.circular(200),
+                  child: Image.network(
+                    (datalist[index]).photoUrl,
+                    height: screenhight * 0.1,
+                    width: screenwidth * 0.2,
+                    fit: BoxFit.fill,
+                  )),
+            );
+          }),
+    );
   }
 }
