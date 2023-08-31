@@ -35,10 +35,13 @@ class PostFeedPage extends StatelessWidget {
   Widget _listOfPost(userdata, screenwidth, screenhight, index) {
     return Expanded(
       child: ListView.builder(
-        itemCount: 1,
+        itemCount: 100,
         itemBuilder: (BuildContext context, int index) {
           return Container(
-            child: Text('hellp'),
+            child: Text(
+              'hellp',
+              style: TextStyle(color: Colors.white),
+            ),
           );
         },
       ),
