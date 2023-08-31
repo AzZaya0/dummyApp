@@ -33,6 +33,11 @@ class HomePage extends StatelessWidget {
                 )
               ],
             ),
+            Divider(
+              color: kprimaryColor,
+              thickness: 1,
+            ),
+            //stream buider added----------------------------------------------------//
             StreamBuilder(
                 stream: getallusers(),
                 builder: (context, snapshot) {
@@ -54,6 +59,7 @@ class HomePage extends StatelessWidget {
         ));
   }
 
+// item for stream buider added----------------------------------------------------//
   Widget _lisBuilder(
       itemCount, List<UserModel> datalist, screenwidth, screenhight) {
     return Container(
