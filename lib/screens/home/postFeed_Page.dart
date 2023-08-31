@@ -1,5 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dummyapp/screens/home/storyPart.dart';
+import 'package:dummyapp/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 import 'package:dummyapp/database/userDB.dart';
@@ -38,39 +40,13 @@ class PostFeedPage extends StatelessWidget {
       child: ListView.builder(
         itemCount: 100,
         itemBuilder: (BuildContext context, int index) {
-          return Container(
-            height: screenhight * 0.15,
-            width: screenwidth,
-            child: ListView.builder(
-                scrollDirection: Axis.horizontal,
-                itemCount: itemCount,
-                itemBuilder: (ctx, index) {
-                  return Padding(
-                    padding: EdgeInsets.only(
-                        right: screenwidth * 0.02,
-                        left: screenwidth * 0.02,
-                        top: screenhight * 0.015,
-                        bottom: 0),
-                    child: Column(
-                      children: [
-                        ClipRRect(
-                            borderRadius: BorderRadius.circular(200),
-                            child: Image.network(
-                              (userdata[index]).photoUrl,
-                              height: screenhight * 0.1,
-                              width: screenwidth * 0.2,
-                              fit: BoxFit.fill,
-                            )),
-                        Text(
-                          (userdata[index]).username,
-                          style: TextStyle(
-                            color: Colors.white,
-                          ),
-                        )
-                      ],
-                    ),
-                  );
-                }),
+          return Column(
+            children: [
+              Divider(
+                color: ksubColor,
+                thickness: 0.2,
+              ),
+            ],
           );
         },
       ),
