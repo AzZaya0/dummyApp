@@ -41,6 +41,7 @@ class StortPage extends StatelessWidget {
       height: screenhight * 0.15,
       width: screenwidth,
       child: ListView.builder(
+          physics: BouncingScrollPhysics(),
           scrollDirection: Axis.horizontal,
           itemCount: itemCount,
           itemBuilder: (ctx, index) {

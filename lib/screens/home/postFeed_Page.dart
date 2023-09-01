@@ -37,52 +37,56 @@ class PostFeedPage extends StatelessWidget {
 
   Widget _listOfPost(
       itemCount, List<UserModel> userdata, screenwidth, screenhight, index) {
+    //to remove scroll glow wrap with ScrollConfiguration and set the behavior
     return Expanded(
-      child: ListView.builder(
-        itemCount: itemCount,
-        itemBuilder: (BuildContext context, int index) {
-          return Padding(
-            padding: EdgeInsets.only(bottom: screenhight * 0.03),
-            child: Column(
-              children: [
-                Padding(
-                  padding: EdgeInsets.only(
-                      bottom: screenhight * 0.02, left: screenwidth * 0.05),
-                  child: Row(
-                    children: [
-                      Container(
-                        height: screenhight * 0.05,
-                        decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(200)),
-                        child: ClipRRect(
-                            borderRadius: BorderRadius.circular(200),
-                            child: Image.network(
-                              (userdata[index]).photoUrl,
-                              fit: BoxFit.fill,
-                            )),
-                      ),
-                      SizedBox(
-                        width: screenwidth * 0.02,
-                      ),
-                      Text(
-                        (userdata[index]).username,
-                        style: TextStyle(color: Colors.white, fontSize: 18),
-                      )
-                    ],
+      child: ScrollConfiguration(
+        behavior: const ScrollBehavior().copyWith(overscroll: false),
+        child: ListView.builder(
+          itemCount: itemCount,
+          itemBuilder: (BuildContext context, int index) {
+            return Padding(
+              padding: EdgeInsets.only(bottom: screenhight * 0.03),
+              child: Column(
+                children: [
+                  Padding(
+                    padding: EdgeInsets.only(
+                        bottom: screenhight * 0.02, left: screenwidth * 0.05),
+                    child: Row(
+                      children: [
+                        Container(
+                          height: screenhight * 0.05,
+                          decoration: BoxDecoration(
+                              borderRadius: BorderRadius.circular(200)),
+                          child: ClipRRect(
+                              borderRadius: BorderRadius.circular(200),
+                              child: Image.network(
+                                (userdata[index]).photoUrl,
+                                fit: BoxFit.fill,
+                              )),
+                        ),
+                        SizedBox(
+                          width: screenwidth * 0.02,
+                        ),
+                        Text(
+                          (userdata[index]).username,
+                          style: TextStyle(color: Colors.white, fontSize: 18),
+                        )
+                      ],
+                    ),
                   ),
-                ),
-                Container(
-                  height: screenhight * 0.4,
-                  width: screenwidth,
-                  child: Image.network(
-                    (userdata[index]).photoUrl,
-                    fit: BoxFit.fill,
-                  ),
-                )
-              ],
-            ),
-          );
-        },
+                  Container(
+                    height: screenhight * 0.4,
+                    width: screenwidth,
+                    child: Image.network(
+                      (userdata[index]).photoUrl,
+                      fit: BoxFit.fill,
+                    ),
+                  )
+                ],
+              ),
+            );
+          },
+        ),
       ),
     );
   }
