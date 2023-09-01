@@ -4,10 +4,12 @@ import 'package:flutter/material.dart';
 class MyIconBtn extends StatelessWidget {
   void Function()? ontap;
   IconData icons;
+  final double size;
   MyIconBtn({
     Key? key,
     required this.ontap,
     required this.icons,
+    required this.size,
   }) : super(key: key);
 
   @override
@@ -17,7 +19,7 @@ class MyIconBtn extends StatelessWidget {
       child: Icon(
         icons,
         color: Colors.white,
-        size: 40,
+        size: size,
       ),
     );
   }

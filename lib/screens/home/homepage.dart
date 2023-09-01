@@ -26,10 +26,16 @@ class HomePage extends StatelessWidget {
             backgroundColor: kprimaryColor,
             actions: [
               MyIconBtn(
-                  ontap: provs.signout, icons: Icons.favorite_border_rounded),
+                  size: 40,
+                  ontap: provs.signout,
+                  icons: Icons.favorite_border_rounded),
               Padding(
                 padding: EdgeInsets.only(left: 12),
-                child: MyIconBtn(ontap: provs.signout, icons: Icons.message),
+                child: MyIconBtn(
+                  ontap: provs.signout,
+                  icons: Icons.message,
+                  size: 40,
+                ),
               )
             ],
           ),

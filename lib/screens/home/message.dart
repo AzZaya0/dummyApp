@@ -23,7 +23,7 @@ class _MessagePageState extends State<MessagePage> {
         backgroundColor: kprimaryColor,
         title: Row(
           children: [
-            MyIconBtn(ontap: widget.ontap, icons: Icons.arrow_back),
+            MyIconBtn(size: 40, ontap: widget.ontap, icons: Icons.arrow_back),
             SizedBox(
               width: 20,
             ),

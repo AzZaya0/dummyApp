@@ -1,7 +1,9 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
+// ignore_for_file: public_member_api_docs, sort_constructors_first, prefer_const_constructors
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:dummyapp/screens/home/storyPart.dart';
 import 'package:dummyapp/utils/constants.dart';
+import 'package:dummyapp/widgets/myIconBtn.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'package:dummyapp/database/userDB.dart';
@@ -48,6 +50,7 @@ class PostFeedPage extends StatelessWidget {
               padding: EdgeInsets.only(bottom: screenhight * 0.03),
               child: Column(
                 children: [
+//top section------------------------------------------------------------------------
                   Padding(
                     padding: EdgeInsets.only(
                         bottom: screenhight * 0.02, left: screenwidth * 0.05),
@@ -74,12 +77,47 @@ class PostFeedPage extends StatelessWidget {
                       ],
                     ),
                   ),
+
+//Middle section -----------------------------------------------------------
                   Container(
                     height: screenhight * 0.4,
                     width: screenwidth,
                     child: Image.network(
                       (userdata[index]).photoUrl,
                       fit: BoxFit.fill,
+                    ),
+                  ),
+// like section ------------------------------------------------------------
+                  Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    child: Row(
+                      children: [
+                        MyIconBtn(
+                          size: 35,
+                          ontap: () {},
+                          icons: Icons.favorite_border_rounded,
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        MyIconBtn(
+                            size: 35,
+                            ontap: () {},
+                            icons: CupertinoIcons.bubble_left),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        MyIconBtn(
+                          size: 35,
+                          ontap: null,
+                          icons: CupertinoIcons.paperplane,
+                        ),
+                        Spacer(),
+                        MyIconBtn(
+                            size: 35,
+                            ontap: null,
+                            icons: CupertinoIcons.bookmark)
+                      ],
                     ),
                   )
                 ],
