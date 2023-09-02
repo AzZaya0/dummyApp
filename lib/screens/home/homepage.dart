@@ -1,4 +1,3 @@
-import 'package:dummyapp/database/getUsers.dart';
 import 'package:dummyapp/provider/homePageProvider.dart';
 import 'package:dummyapp/screens/home/postFeed_Page.dart';
 import 'package:dummyapp/screens/home/storyPart.dart';
@@ -6,8 +5,6 @@ import 'package:dummyapp/utils/constants.dart';
 import 'package:dummyapp/widgets/myIconBtn.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-
-import '../../model/userModel.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
