@@ -1,6 +1,5 @@
 import 'package:dummyapp/provider/homePageProvider.dart';
-import 'package:dummyapp/screens/home/postFeed_Page.dart';
-import 'package:dummyapp/screens/home/storyPart.dart';
+
 import 'package:dummyapp/utils/constants.dart';
 import 'package:dummyapp/widgets/myIconBtn.dart';
 import 'package:flutter/material.dart';
