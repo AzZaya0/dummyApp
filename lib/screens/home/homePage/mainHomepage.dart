@@ -1,5 +1,5 @@
-import 'package:dummyapp/screens/home/homepage.dart';
-import 'package:dummyapp/screens/home/message.dart';
+import 'package:dummyapp/screens/home/homePage/homepage.dart';
+import 'package:dummyapp/screens/home/homePage/message.dart';
 import 'package:flutter/material.dart';
 
 class MainHomePage extends StatefulWidget {
