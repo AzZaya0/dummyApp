@@ -5,6 +5,9 @@ import 'package:dummyapp/widgets/myIconBtn.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
+import 'postFeed_Page.dart';
+import 'storyPart.dart';
+
 class HomePage extends StatelessWidget {
   HomePage({super.key});
 
