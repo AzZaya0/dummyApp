@@ -1,7 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first, prefer_const_constructors
 import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:dummyapp/screens/home/storyPart.dart';
-import 'package:dummyapp/utils/constants.dart';
+
 import 'package:dummyapp/widgets/myIconBtn.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
