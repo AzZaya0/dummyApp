@@ -20,7 +20,7 @@ class _MessagePageState extends State<MessagePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: kprimaryColor,
+        backgroundColor: ksubColor,
         title: Row(
           children: [
             MyIconBtn(size: 40, ontap: widget.ontap, icons: Icons.arrow_back),
