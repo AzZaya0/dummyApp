@@ -1,4 +1,4 @@
-import 'package:dummyapp/screens/home/mainHomepage.dart';
+import 'package:dummyapp/screens/home/homePage/mainHomepage.dart';
 import 'package:dummyapp/screens/login&signup/login.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
