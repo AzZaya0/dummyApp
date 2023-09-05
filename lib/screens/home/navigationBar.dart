@@ -1,11 +1,12 @@
 import 'package:dummyapp/screens/home/homePage/mainHomepage.dart';
-import 'package:dummyapp/screens/home/homePage/message.dart';
+
+import 'package:dummyapp/screens/home/profile/profilePage.dart';
 import 'package:flutter/material.dart';
 
 class MyNavigationBar extends StatelessWidget {
   MyNavigationBar({super.key});
   PageController _pageController = PageController();
-  List<Widget> _pages = [MainHomePage(), MessagePage(ontap: () {})];
+  List<Widget> _pages = [MainHomePage(), ProfilePage()];
   @override
   Widget build(BuildContext context) {
     final screenhight = MediaQuery.of(context).size.height;
