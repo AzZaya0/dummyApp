@@ -1,6 +1,7 @@
 import 'package:dummyapp/screens/home/homePage/mainHomepage.dart';
 import 'package:dummyapp/screens/home/profile/profilePage.dart';
 import 'package:dummyapp/utils/constants.dart';
+import 'package:dummyapp/widgets/myIconBtn.dart';
 import 'package:flutter/material.dart';
 
 class MyNavigationBar extends StatelessWidget {
@@ -21,11 +22,31 @@ class MyNavigationBar extends StatelessWidget {
         Align(
           alignment: Alignment(0, 1),
           child: Container(
-            height: screenhight * 0.05,
+            height: screenhight * 0.07,
             decoration: BoxDecoration(
               color: kprimaryColor,
             ),
-            child: Row(),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                MyIconBtn(
+                    ontap: () {}, icons: Icons.home, size: screenwidth * 0.1),
+                MyIconBtn(
+                    ontap: () {}, icons: Icons.search, size: screenwidth * 0.1),
+                MyIconBtn(
+                    ontap: () {},
+                    icons: Icons.add_box_outlined,
+                    size: screenwidth * 0.1),
+                MyIconBtn(
+                    ontap: () {},
+                    icons: Icons.favorite_border,
+                    size: screenwidth * 0.1),
+                MyIconBtn(
+                    ontap: () {},
+                    icons: Icons.person_2_outlined,
+                    size: screenwidth * 0.1),
+              ],
+            ),
           ),
         ),
       ],
