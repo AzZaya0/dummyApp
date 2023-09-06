@@ -25,6 +25,7 @@ class MyNavigationBar extends StatelessWidget {
             decoration: BoxDecoration(
               color: kprimaryColor,
             ),
+            child: Row(),
           ),
         ),
       ],
