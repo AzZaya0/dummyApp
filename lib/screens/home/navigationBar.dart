@@ -1,18 +1,26 @@
 import 'package:dummyapp/database/userDB.dart';
 import 'package:dummyapp/provider/navigationBarProvider.dart';
 import 'package:dummyapp/screens/home/homePage/mainHomepage.dart';
+import 'package:dummyapp/screens/home/notification/notificationPage.dart';
+import 'package:dummyapp/screens/home/postCreate/newPostPage.dart';
 import 'package:dummyapp/screens/home/profile/profilePage.dart';
+import 'package:dummyapp/screens/home/search/searchPeoplePage.dart';
 import 'package:dummyapp/utils/constants.dart';
 import 'package:dummyapp/widgets/MyimageBtn.dart';
 import 'package:dummyapp/widgets/myIconBtn.dart';
-import 'package:dummyapp/widgets/mystreamBuilder.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 class MyNavigationBar extends StatelessWidget {
   MyNavigationBar({super.key});
   PageController _pageController = PageController();
-  List<Widget> _pages = [MainHomePage(), ProfilePage()];
+  List<Widget> _pages = [
+    MainHomePage(),
+    SearchPeoplePage(),
+    NewPostPage(),
+    NotificationPage(),
+    ProfilePage(),
+  ];
   @override
   Widget build(BuildContext context) {
     final povs = Provider.of<MyNavigationBarProvider>(context, listen: false);
