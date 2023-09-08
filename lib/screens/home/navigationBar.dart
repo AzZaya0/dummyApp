@@ -36,31 +36,31 @@ class MyNavigationBar extends StatelessWidget {
                 children: [
                   MyIconBtn(
                       ontap: () {
-                        snapshot.changeColor(0);
+                        snapshot.changeColor(0, _pageController);
                       },
                       icons: snapshot.home,
                       size: screenwidth * 0.1),
                   MyIconBtn(
                       ontap: () {
-                        snapshot.changeColor(1);
+                        snapshot.changeColor(1, _pageController);
                       },
-                      icons: Icons.search,
+                      icons: snapshot.search,
                       size: screenwidth * 0.1),
                   MyIconBtn(
                       ontap: () {
-                        snapshot.changeColor(2);
+                        snapshot.changeColor(2, _pageController);
                       },
                       icons: Icons.add_box_outlined,
                       size: screenwidth * 0.1),
                   MyIconBtn(
                       ontap: () {
-                        snapshot.changeColor(3);
+                        snapshot.changeColor(3, _pageController);
                       },
                       icons: Icons.favorite_border,
                       size: screenwidth * 0.1),
                   MyIconBtn(
                       ontap: () {
-                        snapshot.changeColor(4);
+                        snapshot.changeColor(4, _pageController);
                       },
                       icons: Icons.person_2_outlined,
                       size: screenwidth * 0.1),
