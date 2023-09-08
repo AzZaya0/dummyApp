@@ -50,20 +50,15 @@ class MyNavigationBar extends StatelessWidget {
                       ontap: () {
                         snapshot.changeColor(2, _pageController);
                       },
-                      icons: Icons.add_box_outlined,
+                      icons: snapshot.post,
                       size: screenwidth * 0.1),
                   MyIconBtn(
                       ontap: () {
                         snapshot.changeColor(3, _pageController);
                       },
-                      icons: Icons.favorite_border,
+                      icons: snapshot.notification,
                       size: screenwidth * 0.1),
-                  MyIconBtn(
-                      ontap: () {
-                        snapshot.changeColor(4, _pageController);
-                      },
-                      icons: Icons.person_2_outlined,
-                      size: screenwidth * 0.1),
+                  
                 ],
               );
             }),
