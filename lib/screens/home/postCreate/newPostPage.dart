@@ -1,3 +1,4 @@
+import 'package:dummyapp/utils/constants.dart';
 import 'package:flutter/material.dart';
 
 class NewPostPage extends StatelessWidget {
@@ -5,6 +6,10 @@ class NewPostPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text("postingPage")),);
+    return Scaffold(
+      appBar:
+          AppBar(backgroundColor: kprimaryColor, title: Text("postingPage")),
+      body: Container(),
+    );
   }
 }

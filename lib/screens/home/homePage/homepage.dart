@@ -9,7 +9,8 @@ import 'postFeed_Page.dart';
 import 'storyPart.dart';
 
 class HomePage extends StatelessWidget {
-  HomePage({super.key});
+  HomePage({super.key, required this.controller});
+  final PageController controller;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +32,11 @@ class HomePage extends StatelessWidget {
               Padding(
                 padding: EdgeInsets.only(left: 12),
                 child: MyIconBtn(
-                  ontap: provs.signout,
+                  ontap: () {
+                    controller.animateToPage(1,
+                        duration: Duration(milliseconds: 200),
+                        curve: Curves.ease);
+                  },
                   icons: Icons.message,
                   size: 40,
                 ),
@@ -40,7 +45,7 @@ class HomePage extends StatelessWidget {
           ),
 
           //Story Page buider added----------------------------------------------------//
-          StortPage(screenhight: screenhight, screenwidth: screenwidth),
+          StoryPage(screenhight: screenhight, screenwidth: screenwidth),
           Divider(
             color: ksubColor,
             thickness: 0.2,

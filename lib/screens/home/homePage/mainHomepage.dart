@@ -18,7 +18,7 @@ class _MainHomePageState extends State<MainHomePage> {
       scrollBehavior: const ScrollBehavior().copyWith(overscroll: false),
       controller: _controller,
       children: [
-        HomePage(),
+        HomePage(controller: _controller),
         MessagePage(ontap: () {
           _controller.previousPage(
               duration: Duration(milliseconds: 300), curve: Curves.easeIn);

@@ -8,4 +8,6 @@ class homePageProvider with ChangeNotifier {
     GoogleSignIn().signOut();
     notifyListeners();
   }
+
+  void tomessagePage() {}
 }

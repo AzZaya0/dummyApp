@@ -4,8 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:dummyapp/database/getUsers.dart';
 import 'package:dummyapp/model/userModel.dart';
 
-class StortPage extends StatelessWidget {
-  StortPage({
+class StoryPage extends StatelessWidget {
+  StoryPage({
     Key? key,
     required this.screenhight,
     required this.screenwidth,
