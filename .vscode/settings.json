@@ -1,6 +1,7 @@
 {
     "editor.acceptSuggestionOnEnter": "on",
     "cSpell.words": [
-        "dummyapp"
+        "dummyapp",
+        "mainwidget"
     ]
 }

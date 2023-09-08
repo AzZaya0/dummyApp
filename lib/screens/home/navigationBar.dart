@@ -1,8 +1,11 @@
+import 'package:dummyapp/database/userDB.dart';
 import 'package:dummyapp/provider/navigationBarProvider.dart';
 import 'package:dummyapp/screens/home/homePage/mainHomepage.dart';
 import 'package:dummyapp/screens/home/profile/profilePage.dart';
 import 'package:dummyapp/utils/constants.dart';
+import 'package:dummyapp/widgets/MyimageBtn.dart';
 import 'package:dummyapp/widgets/myIconBtn.dart';
+import 'package:dummyapp/widgets/mystreamBuilder.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
@@ -58,7 +61,12 @@ class MyNavigationBar extends StatelessWidget {
                       },
                       icons: snapshot.notification,
                       size: screenwidth * 0.1),
-                  
+                  MyImageButton(
+                      ontap: () {
+                        snapshot.changeColor(4, _pageController);
+                      },
+                      screenhight: screenhight * 0.05,
+                      imageUrl: UserDB.user.photoURL)
                 ],
               );
             }),

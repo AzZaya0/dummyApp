@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first, prefer_const_constructors
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:dummyapp/widgets/MyimageBtn.dart';
 
 import 'package:dummyapp/widgets/myIconBtn.dart';
 import 'package:flutter/cupertino.dart';
@@ -55,17 +56,13 @@ class PostFeedPage extends StatelessWidget {
                         bottom: screenhight * 0.02, left: screenwidth * 0.05),
                     child: Row(
                       children: [
-                        Container(
-                          height: screenhight * 0.05,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(200)),
-                          child: ClipRRect(
-                              borderRadius: BorderRadius.circular(200),
-                              child: Image.network(
-                                (userdata[index]).photoUrl,
-                                fit: BoxFit.fill,
-                              )),
-                        ),
+                        MyImageButton(
+                            ontap:
+                                () {}, // ---------------------------------------- To Open User Profile
+                            screenhight: screenhight * 0.05,
+                            imageUrl: (userdata[index]).photoUrl)
+                        //(userdata[index]).photoUrl,
+                        ,
                         SizedBox(
                           width: screenwidth * 0.02,
                         ),
